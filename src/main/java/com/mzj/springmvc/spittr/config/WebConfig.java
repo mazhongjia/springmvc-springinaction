@@ -12,7 +12,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc//启用Spring MVC
-@ComponentScan("com.mzj.springmvc.spittr.webbean")//指定组件扫描范围，可以扫描到带有@Controller注解的bean（spring mvc中的Controller）
+@ComponentScan("com.mzj.springmvc.spittr.web")//指定组件扫描范围，可以扫描到带有@Controller注解的bean（spring mvc中的Controller）
 public class WebConfig extends WebMvcConfigurerAdapter {
 
   /**
