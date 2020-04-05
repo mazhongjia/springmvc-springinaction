@@ -1,6 +1,5 @@
 package com.mzj.springmvc.spittr.web;
 
-import com.mzj.springmvc.spittr.Spittle;
 import com.mzj.springmvc.spittr.data.SpittleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,7 +28,7 @@ public class SpittleController {
     }
 
     /**
-     * 在spittles()方法中给定了一个Model作为参 数。这样，spittles()方法就能将Repository中获取到的 Spittle列表填充到模型中。Model实际上就是一个Map（也就是 key-value对的集合），它会传递给视图，这样数据就能渲染到客户端 了。
+     * 在spittles()方法中给定了一个Model作为参 数。这样，spittles()方法就能将Repository中获取到的 Spittle列表填充到模型中。Model实际上就是一个Map（也就是 key-value对的集合），它会传递给视图，这样数据就能渲染到客户端了。
      * <p>
      * 以下两个注释方法，与本方法达到的效果一致
      *
@@ -40,7 +39,7 @@ public class SpittleController {
     public String spittles(Model model) {//如果你希望使用非Spring类型的话，那么可以用java.util.Map来 代替Model。实际上Model就是Map
         //当调用addAttribute()方法并且不指定key的时候，那么key会 根据值的对象类型推断确定。在本例中，因为它是一 个List<Spittle>，因此，键将会推断为spittleList。
         model.addAttribute("spittleList", spittleRepository.findSpittles(Long.MAX_VALUE, 20));//将spittle添加到模型中
-        return "spittles";//返回视图名,spittles()方法所做的最后一件事是返回spittles作为视图的名 字，这个视图会渲染模型。
+        return "spittles";//返回视图名,spittles()方法所做的最后一件事是返回spittles作为视图的名字，这个视图会渲染模型。
     }
 
 //    public String spittles(Map model){/
