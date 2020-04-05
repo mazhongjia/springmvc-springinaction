@@ -14,6 +14,11 @@ public class SpittleRepositoryImpl implements SpittleRepository {
         return createSpittleList(20);
     }
 
+    @Override
+    public Spittle findOne(long spittleId) {
+        return new Spittle(spittleId,"Spittle54321", new Date(),null,null);
+    }
+
     private List<Spittle> createSpittleList(int count) {
         List<Spittle> spittles = new ArrayList<Spittle>();
         for (int i = 0; i < count; i++) {

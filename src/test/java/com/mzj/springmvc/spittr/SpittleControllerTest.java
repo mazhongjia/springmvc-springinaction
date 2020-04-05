@@ -18,7 +18,7 @@ import org.springframework.web.servlet.view.InternalResourceView;
 public class SpittleControllerTest {
 
   @Test
-  public void houldShowRecentSpittles() throws Exception {
+  public void shouldShowRecentSpittles() throws Exception {
     //1、这个测试首先会创建SpittleRepository接口的mock实现，这个 实现会从它的findSpittles()方法中返回20个Spittle对象。
     List<Spittle> expectedSpittles = createSpittleList(20);
     SpittleRepository mockRepository = mock(SpittleRepository.class);//mock   SpittleRepository接口的实现
