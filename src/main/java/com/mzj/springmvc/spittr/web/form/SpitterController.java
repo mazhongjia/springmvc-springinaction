@@ -33,13 +33,21 @@ public class SpitterController {
     return "registerForm";
   }
 
+  //-------------增加表单的校验start---------------
   /**
    * 处理表单提交控制器
    * @param spitter
    * @return
    */
   @RequestMapping(value="/register", method=POST)
-  public String processRegistration(Spitter spitter) {
+  public String processRegistration(@Valid Spitter spitter,Errors errors) {
+
+    if(errors.hasErrors()){//如果验证失败，重新返回表单
+      return "registerForm";
+    }
+
+    //-------------增加表单的校验end---------------
+
     /**
      * 这个控制器方法直接声明接收一个Spittler对象参数，需要依赖发送请求的客户端：在请求中使用与Spittler对象中属性同名的参数，这样Spittler对象的属性会自动进行填充，对于本测试来说，是SpittlerControllerTest的shouldProcessRegistration中的下面代码起到的作用：
      *
